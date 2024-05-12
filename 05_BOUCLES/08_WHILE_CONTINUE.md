@@ -1,0 +1,12 @@
+# WHILE WONTINUE
+
+```abap
+WHILE SY-INDEX <= 5.
+  IF SY-INDEX < 3.
+    CONTINUE.
+  ENDIF.
+  WRITE / SY-INDEX.
+ENDWHILE.
+```
+
+![](../assets/images/WHILE_ENDWHILE_004.jpg)
