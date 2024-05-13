@@ -12,7 +12,7 @@ Lors de la création, renseigner le nom/description de l’OT en respectant les 
 - W = OT de Workbench
 - Description du sujet à l’origine de cet OT
 
-![](../ASSETS/images/OT_016.jpg)
+![](../assets/images/OT_016.jpg)
 
 ## CREATION
 
