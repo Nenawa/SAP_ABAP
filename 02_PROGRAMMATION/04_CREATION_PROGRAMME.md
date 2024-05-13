@@ -2,11 +2,11 @@
 
 Transaction ``SE38``
 
-![](../ASSETS/images/PROGRAMME_012.jpg)
+![](../assets/images/PROGRAMME_012.jpg)
 
 ## FONCTIONNALITES SE38
 
-![](../ASSETS/images/PROGRAMME_013.jpg)
+![](../assets/images/PROGRAMME_013.jpg)
 
 - ``Contrôler`` (Programme -> Contrôler -> Syntaxe ou [ Ctrl ] + [ F2 ])
      
@@ -57,7 +57,7 @@ Transaction ``SE38``
 
 ## INTERFACE
 
-![](../ASSETS/images/PROGRAMME_014.jpg)
+![](../assets/images/PROGRAMME_014.jpg)
 
 - ``Texte Source`` pour modifier le code source.
 
@@ -77,19 +77,19 @@ Pour les développements spécifiques ABAP, tous les objets doivent toujours com
 
 ## CREATION
 
-![](../ASSETS/images/PROGRAMME_001.jpg)
+![](../assets/images/PROGRAMME_001.jpg)
 
     Lors de la création du programme ZFGI_HELLO_WORLD, une fenêtre des propriétés du programme apparaît. Plusieurs éléments sont obligatoires, à commencer par le titre (quelconque, pour cet exemple, celui de HELLO WORLD sera choisi).
 
-![](../ASSETS/images/PROGRAMME_002.jpg)
+![](../assets/images/PROGRAMME_002.jpg)
 
 ### ATTRIBUTS
 
-![](../ASSETS/images/PROGRAMME_004.jpg)
+![](../assets/images/PROGRAMME_004.jpg)
 
 #### ATTRIBUT TYPE
 
-![](../ASSETS/images/PROGRAMME_003.jpg)
+![](../assets/images/PROGRAMME_003.jpg)
 
     Comme le programme à créer est simple et vise à être exécuté directement via TRANSACTION ou éditeur ABAP, le type exécutable sera choisi.
 
@@ -135,7 +135,7 @@ Il existe bien évidemment plusieurs types de programme à savoir :
 
 #### ATTRIBUTS STATUT, APPLICATION & GROUPE AUTORISATION
 
-![](../ASSETS/images/PROGRAMME_005.jpg)
+![](../assets/images/PROGRAMME_005.jpg)
 
 N’étant pas obligatoires et assez peu utilisés, il n’est pas nécessaire de s’y attarder mais en résumé :
 
@@ -153,7 +153,7 @@ N’étant pas obligatoires et assez peu utilisés, il n’est pas nécessaire d
 
 #### ATTRIBUTS NOM BD LOGIQUE & EXRAN DE SELECTION
 
-![](../ASSETS/images/PROGRAMME_006.jpg)
+![](../assets/images/PROGRAMME_006.jpg)
 
 Après avoir sélectionner "Programme exécutable", deux autres options supplémentaires sont apparues :
 
@@ -169,7 +169,7 @@ Comme pour les options précédentes, elles seront laissées à blanc.
 
 #### ATTRIBUTS OPTIONS
 
-![](../ASSETS/images/PROGRAMME_007.jpg)
+![](../assets/images/PROGRAMME_007.jpg)
 
 - Option Blocage de l’éditeur 
 
@@ -181,41 +181,41 @@ Comme pour les options précédentes, elles seront laissées à blanc.
 
 ### SAUVEGARDER
 
-![](../ASSETS/images/PROGRAMME_008.jpg)
+![](../assets/images/PROGRAMME_008.jpg)
 
 Une fois toutes les propriétés du programme renseignées, et après avoir cliqué sur ``Sauvegarder``, une nouvelle fenêtre apparaît. Cette fois-ci, il sera nécessaire de définir si le programme a pour vocation de rester en local ou s’il devra être transporté dans les systèmes du projet.
 
 - Si le programme est voué à être un test, il sera nécessaire de renseigner le champ Package comme suivant et de cliquer sur ``Objet local``.
 
-     ![](../ASSETS/images/PROGRAMME_015.jpg)
+     ![](../assets/images/PROGRAMME_015.jpg)
 
      Il ne sera alors pas nécessaire d'attribuer un OT pour ce programme car il serait enregistrer en tant qu'objet locale et sera temporaire (package $TMP).
 
 - Sinon, renseigné le package sur lequel le programme doit appartenir et cliquer sur ``Sauvegarder``.
 
-     ![](../ASSETS/images/PROGRAMME_016.jpg)
+     ![](../assets/images/PROGRAMME_016.jpg)
 
      Il sera alors nécessaire d'attribuer un OT sur lequel transferrer le programme.
 
      - Soit en le créant directement : 
 
-          ![](../ASSETS/images/PROGRAMME_017.jpg)
+          ![](../assets/images/PROGRAMME_017.jpg)
 
-          ![](../ASSETS/images/PROGRAMME_018.jpg)
+          ![](../assets/images/PROGRAMME_018.jpg)
 
-          ![](../ASSETS/images/PROGRAMME_019.jpg)
+          ![](../assets/images/PROGRAMME_019.jpg)
 
      - Soit en le sélectionnant s'il existe déjà :
 
-          ![](../ASSETS/images/PROGRAMME_020.jpg)
+          ![](../assets/images/PROGRAMME_020.jpg)
 
-          ![](../ASSETS/images/PROGRAMME_021.jpg)
+          ![](../assets/images/PROGRAMME_021.jpg)
 
-          ![](../ASSETS/images/PROGRAMME_019.jpg)
+          ![](../assets/images/PROGRAMME_019.jpg)
 
 ## EDITEUR ABAP
 
-![](../ASSETS/images/PROGRAMME_022.jpg)
+![](../assets/images/PROGRAMME_022.jpg)
 
 Maintenant que le programme a été créé, l’_éditeur ABAP_ est ouvert en mode modification. Les premières lignes sont caractérisées par le [CARTOUCHE](../03_VARIABLES_&_CONSTANTES/01_CARTOUCHE_&_COMMENTAIRES/02_CARTOUCHE.md) du programme.
 
@@ -229,7 +229,7 @@ Maintenant que le programme a été créé, l’_éditeur ABAP_ est ouvert en mo
 
 ### NAVIGATION DANS L'EDITEUR
 
-![](../ASSETS/images/PROGRAMME_023.jpg)
+![](../assets/images/PROGRAMME_023.jpg)
 
 - ``Ecran précédent`` ([ Shift]`` + ``[ F6 ]) 
 
