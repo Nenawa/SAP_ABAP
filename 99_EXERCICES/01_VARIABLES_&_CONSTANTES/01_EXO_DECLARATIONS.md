@@ -2,7 +2,7 @@
 
 ## CONSIGNES
 
-```abap
+```
 Instructions :
 
 RG 1 : Créer un programme ABAP SAP (à partir de la transaction SE38) avec comme convention de nommage "ZTRI_EXERCICE_CHAP_3". ce programme devra être affilié à l'OT précédemment créé et devra appartenir au package "ZAELION" (pas d'enregistrement en local !).
