@@ -24,28 +24,28 @@ Suivre la procédure officielle SAP : [Creating the Main Package](https://help.s
 
 Aller dans la Transaction ``SE80``
 
-![](../ASSETS/images/PACKAGE_001.jpg)
+![](../assets/images/PACKAGE_001.jpg)
 
 1. Sélectionner ``Package``...
 
-     ![](../ASSETS/images/PACKAGE_002.jpg)
+     ![](../assets/images/PACKAGE_002.jpg)
 
 2. Entrer un nom de ``Package`` en commençant par ``Z``.
 
-    ![](../ASSETS/images/PACKAGE_003.jpg)
+    ![](../assets/images/PACKAGE_003.jpg)
 
 3. Appuyer sur Entrée. Une fenêtre popup s'ouvrira et vous demandera confirmation. Cliquer sur Oui.
 
-    ![](../ASSETS/images/PACKAGE_004.jpg)
+    ![](../assets/images/PACKAGE_004.jpg)
 
 4. Une seconde fenêtre popup s'ouvrira et vous demandera de renseigner des informations
 
-    ![](../ASSETS/images/PACKAGE_005.jpg)
+    ![](../assets/images/PACKAGE_005.jpg)
 
 4. Renseigner la description et les éventuelles autres informations précisées dans la spécification fonctionnelle, puis Valider.
 
-    ![](../ASSETS/images/PACKAGE_006.jpg)
+    ![](../assets/images/PACKAGE_006.jpg)
 
 5. Renseigner l'``OT`` sur lequel le package va être lié, puis valider.
 
-    ![](../ASSETS/images/PACKAGE_007.jpg)
+    ![](../assets/images/PACKAGE_007.jpg)
