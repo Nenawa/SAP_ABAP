@@ -23,7 +23,7 @@ Concernant les transactions techniques, il en existe bien évidemment plusieurs 
 ![](../assets/images/TRANSACTIONS_001.jpg)
 
 Les plus utilisées seront les suivantes :
-s
+
 | ``T-CODE``   | TRANSACTION                                                                                                                                          |
 | ------------ | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `SE38`       | Editeur ABAP                                                                                                                                         |
