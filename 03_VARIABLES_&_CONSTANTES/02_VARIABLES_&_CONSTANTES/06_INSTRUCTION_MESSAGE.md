@@ -44,11 +44,11 @@ MESSAGE 'Succés.' TYPE 'S' DISPLAY LIKE 'I'.
 
 1. Dans un programme modifiable
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_000.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_000.jpg)
 
 2. Aller dans [ Saut ], puis [ Eléments de texte ]
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_001.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_001.jpg)
 
 3. Aller dans l'onglet [ Symboles de texte ], puis renseigner le numéro du message ainsi que son contenu.
 
