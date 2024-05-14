@@ -7,7 +7,7 @@ Une constante est un symbole informatique associant un nom à une valeur qui peu
 L’instruction commencera par `CONSTANTS` et devra comporter obligatoirement une valeur fixe avec `VALUE`.
 
 ```abap
-CONSTANTS: c_valeur_constante TYPE i VALUE 10.
+CONSTANTS: lc_valeur_constante TYPE i VALUE 10.
 ```
 Attention : L'utilisation des deux-points ``:`` est nécessaire pour indiquer la déclaration d'une constante. Sans les deux-points, l'interpréteur ABAP ne reconnaîtra pas correctement la déclaration comme une constante.
 
