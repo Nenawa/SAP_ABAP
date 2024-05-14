@@ -75,7 +75,7 @@ lv_a = 5 + 2.
 ADD 7 TO lv_a.
 ```
 
-## - (MOINS) OU SUBSTRACT... FROM...
+## - (MOINS) OU SUBTRACT... FROM...
 
 ```abap
 DATA: lv_a(2) TYPE I,
