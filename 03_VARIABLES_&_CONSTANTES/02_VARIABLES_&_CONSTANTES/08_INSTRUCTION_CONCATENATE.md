@@ -27,7 +27,7 @@ CONSTANTS: lc_text1(20) TYPE C VALUE 'Hello',
            lc_text4(20) TYPE C VALUE 'sur',
            lc_text5(20) TYPE C VALUE 'SAP'.
 
-DATA: lv_result1(50) TYPE C,
+DATA: lv_resul1(50) TYPE C,
       lv_resul2(50)  TYPE C,
       lv_resul3(100) TYPE C.
 
