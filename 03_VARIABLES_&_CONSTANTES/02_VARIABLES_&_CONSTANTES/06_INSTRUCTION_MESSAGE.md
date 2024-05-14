@@ -52,25 +52,25 @@ MESSAGE 'Succés.' TYPE 'S' DISPLAY LIKE 'I'.
 
 3. Aller dans l'onglet [ Symboles de texte ], puis renseigner le numéro du message ainsi que son contenu.
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_002.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_002.jpg)
 
 4. Appuyer sur Entrée.
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_003.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_003.jpg)
 
 5. Enregistrer et activer.
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_004.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_004.jpg)
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_005.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_005.jpg)
 
 7. [ Retour arrière ]
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_006.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_006.jpg)
 
 8. Dans le programme, après l'instruction ``START-OF-SELECTION``, entrer l'instruction suivante :
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_007.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_007.jpg)
 
       ```abap
       START-OF-SELECTION.
@@ -80,4 +80,4 @@ MESSAGE 'Succés.' TYPE 'S' DISPLAY LIKE 'I'.
 
 9. [ Activer ] et [ Exécuter ]
 
-      ![](../../ASSETS/images/INSTRUCTION_MESSAGE_008.jpg)
+      ![](../../assets/images/INSTRUCTION_MESSAGE_008.jpg)
