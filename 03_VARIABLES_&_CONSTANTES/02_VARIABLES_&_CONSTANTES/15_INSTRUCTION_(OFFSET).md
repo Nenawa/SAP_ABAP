@@ -22,7 +22,7 @@ CONCATENATE SY-DATUM+6(2)
 CONDENSE V_DATE NO-GAPS.
 
 WRITE:/ SY-DATUM,
-      / V_DATE.
+      / lv_date.
 ```
 
 Une variable `lv_date` est déclarée de type chaîne de caractères de dix positions afin de pouvoir stocker la date finale, puis la date système [SY-DATUM](../../00_HELP/02_SY_SYSTEM.md) sera travaillée de la façon suivante :
