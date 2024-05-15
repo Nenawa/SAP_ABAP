@@ -11,7 +11,7 @@ ENDIF.
 Exemple
 
 ```abap
-DATA: lc_oper1 TYPE CHAR9 VALUE 'image.png',
+CONSTANTS: lc_oper1 TYPE CHAR9 VALUE 'image.png',
       lc_oper2 TYPE CHAR5 VALUE '*.png'.
 
 IF lc_oper1 CP lc_oper2.

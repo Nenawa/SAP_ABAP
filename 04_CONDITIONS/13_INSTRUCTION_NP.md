@@ -8,10 +8,10 @@ ENDIF.
 
 `NP` signifie en anglais `No Pattern` et au contraire de `CP`, vérifiera que la chaîne de caractères `oper1` ne respecte pas le modèle contenu dans `oper2`.
 
-_Exemple_
+Exemple
 
 ```abap
-DATA: lc_oper1 TYPE CHAR9 VALUE 'texte.txt',
+CONSTANTS: lc_oper1 TYPE CHAR9 VALUE 'texte.txt',
       lc_oper2 TYPE CHAR5 VALUE '*.png'.
 
 IF lc_oper1 NP lc_oper2.

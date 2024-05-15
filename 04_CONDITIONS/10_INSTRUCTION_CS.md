@@ -11,7 +11,7 @@ ENDIF.
 Exemple
 
 ```abap
-DATA: lc_oper1 TYPE CHAR11 VALUE 'Hello World',
+CONSTANTS: lc_oper1 TYPE CHAR11 VALUE 'Hello World',
       lc_oper2 TYPE CHAR5  VALUE 'World'.
 
 IF lc_oper1 CS lc_oper2.
