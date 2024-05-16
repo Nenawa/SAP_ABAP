@@ -209,7 +209,7 @@ Version un peu plus réaliste :
 
 ### REGLE GENERALE SPECIAL CORALIE :
 
-> A. Après avoir lu le chapitre sur les tables internes, déclare une structure de table nommée 'ty_ekko' avec les même champs/type que les variables déclarées précédemment :
+> A. Après avoir lu le chapitre sur les [tables internes](../07_TABLE_INTERNE/01_TABLES_INTERNES.md), déclare une structure de table nommée 'ty_ekko' avec les même champs/type que les variables déclarées précédemment :
 >
 > | VARIABLE | TYPE | VALEUR     | DESCRIPTION DU CHAMP DANS LA TABLE   |
 > |----------|------|------------|--------------------------------------|
@@ -218,4 +218,4 @@ Version un peu plus réaliste :
 > | ?        | ?    | SY-DATUM   | Date de création du document d'achat |
 > | ?        | ?    | 4          | Dernier numéro de poste              |
 >
-> B. A partir de la struture, essaye de déclarer une table de type standard, une table de type sorted et une table de type hashed.
+> B. A partir de la struture, essaye de déclarer une table de t[ype standard](../07_TABLE_INTERNE/02_TYPE_STANDARD.md), une table de [type sorted](../07_TABLE_INTERNE/03_TYPE_SORTED.md) et une table de [type hashed](../07_TABLE_INTERNE/04_TYPE_HASHED.md).
