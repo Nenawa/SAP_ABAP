@@ -206,3 +206,16 @@ Version un peu plus réaliste :
 > - numero_poste_4
 >
 > Séparer les trois blocs avec une ligne horizontale.
+
+### REGLE GENERALE SPECIAL CORALIE :
+
+> A. Après avoir lu le chapitre sur les tables internes, déclare une structure de table nommée 'ty_ekko' avec les même champs/type que les variables déclarées précédemment :
+>
+> | VARIABLE | TYPE | VALEUR     | DESCRIPTION DU CHAMP DANS LA TABLE   |
+> |----------|------|------------|--------------------------------------|
+> | ?        | ?    | 4500000001 | Numéro du document d'achat           |
+> | ?        | ?    | 1710       | Société                              |
+> | ?        | ?    | SY-DATUM   | Date de création du document d'achat |
+> | ?        | ?    | 4          | Dernier numéro de poste              |
+>
+> B. A partir de la struture, essaye de déclarer une table de type standard, une table de type sorted et une table de type hashed.
