@@ -137,7 +137,7 @@ Version un peu plus réaliste :
 >
 > - Stocker ces identifiants dans des variables locales nommée 'numero_poste_*'.
 
-### REGLE GENERALE 4 : TRAITEMENT DES VALEURS
+### REGLE GENERALE 5 : TRAITEMENT DES VALEURS
 
 Version simplifiée :
 
@@ -148,3 +148,19 @@ Version simplifiée :
 Version un peu plus réaliste :
 
 > Séparer la constante 'designation' au séparateur '_' et concaténer les variables pour former le pattern 'BKR-300' dans une variable nommée 'split_pattern'.
+
+### REGLE GENERALE 6 : CONDITIONS
+
+Version simplifiée :
+
+> A. A l'aide de l'instruction 'IF', vérifier que toutes les variables 'numero_poste_*' ne sont pas vide. Si ce n'est pas le cas, utiliser l'instruction 'MESSAGE' de 'TYPE' 'E' 'DISPLAY LIKE' 'I' pour faire apparaître le message suivant : "Numéro(s) de poste inexistant ou vide".
+>
+> B. Si la première condition est valide, alors, toujours à l'aide de l'instruction 'IF', vérifier pour chaque variable 'numero_poste_*' correspond au pattern suivant '45000000010000'. 
+>
+> - Si l'une des variables ne respecte pas le pattern, utiliser l'instruction 'MESSAGE' de 'TYPE' 'E' 'DISPLAY LIKE' 'W' avec comme message sa valeur.
+
+Version un peu plus réaliste :
+
+> Vérifier la validité des variables 'numero_poste_*'. Si invalide, faire afficher le message d'erreur "Numéro(s) de poste inexistant ou vide" dans une fenêtre popup.
+>
+> - Le texte "Numéro(s) de poste inexistant ou vide" devra être écrit dans les éléments de texte à l'identifiant '001'.
