@@ -207,7 +207,7 @@ Version un peu plus réaliste :
 >
 > Séparer les trois blocs avec une ligne horizontale.
 
-### REGLE GENERALE SPECIAL CORALIE :
+### REGLE GENERALE SPECIAL CORALIE/QUENTIN :
 
 > A. Après avoir lu le chapitre sur les [tables internes](../07_TABLE_INTERNE/01_TABLES_INTERNES.md), déclare une structure de table nommée 'ty_ekko' avec les même champs/type que les variables déclarées précédemment :
 >
