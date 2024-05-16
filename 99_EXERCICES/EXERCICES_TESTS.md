@@ -153,7 +153,7 @@ Version un peu plus réaliste :
 
 Version simplifiée :
 
-> A. A l'aide de l'instruction 'IF', vérifier que toutes les variables 'numero_poste_*' ne sont pas vide. Si ce n'est pas le cas, utiliser l'instruction 'MESSAGE' de 'TYPE' 'E' 'DISPLAY LIKE' 'I' pour faire apparaître le message suivant : "Numéro(s) de poste inexistant ou vide".
+> A. A l'aide de l'instruction 'IF', vérifier que toutes les variables 'numero_poste_*' ne sont pas vide ('IS NOT INITIAL'). Si ce n'est pas le cas, utiliser l'instruction 'MESSAGE' de 'TYPE' 'E' 'DISPLAY LIKE' 'I' pour faire apparaître le message suivant : "Numéro(s) de poste inexistant ou vide".
 >
 > B. Si la première condition est valide, alors, toujours à l'aide de l'instruction 'IF', vérifier pour chaque variable 'numero_poste_*' correspond au pattern suivant '45000000010000'. 
 >
@@ -164,3 +164,45 @@ Version un peu plus réaliste :
 > Vérifier la validité des variables 'numero_poste_*'. Si invalide, faire afficher le message d'erreur "Numéro(s) de poste inexistant ou vide" dans une fenêtre popup.
 >
 > - Le texte "Numéro(s) de poste inexistant ou vide" devra être écrit dans les éléments de texte à l'identifiant '001'.
+
+### REGLE GENERALE 7 : REPORTING
+
+Version simplifiée :
+
+> A l'aide de l'instruction 'WRITE', faire afficher les variables/constantes suivantes lors de l'exécution du programme :
+>
+> - doc_achat
+>
+> - ULINE
+>
+> - numero_doc_achat
+> - societe
+> - date_creation
+> - dernier_poste
+>
+> - ULINE
+>
+> - numero_poste_1
+> - numero_poste_2
+> - numero_poste_3
+> - numero_poste_4
+>
+> Aider de l'instruction 'ULINE' pour séparer les trois blocs de contenu.
+
+Version un peu plus réaliste :
+
+> A l'exécution, le Report devra afficher les éléments suivants :
+>
+> - doc_achat
+>
+> - '???' (variable 'Numéro du document d'achat') et son nom de zone dans sa table d'origine
+> - '???' (variable 'Société') et son nom de zone dans sa table d'origine
+> - '???' (variable 'Date de création du document d'achat') et son nom de zone dans sa table d'origine
+> - '???' (variable 'Dernier numéro de poste') et son nom de zone dans sa table d'origine
+>
+> - numero_poste_1
+> - numero_poste_2
+> - numero_poste_3
+> - numero_poste_4
+>
+> Séparer les trois blocs avec une ligne horizontale.
