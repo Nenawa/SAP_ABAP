@@ -27,7 +27,7 @@ LOOP AT lt_cost INTO ls_cost.
 ENDLOOP.
 ```
 
-La [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `lt_cost` aura le résultat suivant :
+La [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `lt_cost` aura le résultat suivant :
 
 | **CITY_FROM** | **CITY_TO** | **TOTAL_TRAJ** |
 | ------------- | ----------- | -------------- |

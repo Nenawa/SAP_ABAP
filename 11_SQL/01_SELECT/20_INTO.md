@@ -1,50 +1,50 @@
-# **INTO**
+# INTO
 
 Plusieurs types de `INTO` ont déjà été détaillés dans les parties précédentes comme :
 
 ## Into Variable
 
-Données stockées dans une [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) déclarée auparavant dans un `DATA`
+Données stockées dans une structure déclarée auparavant dans un `DATA`
 
-```JS
-INTO wa
+```abap
+INTO ls
 ```
 
 ## Into Table
 
-Données stockées dans une [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) déclarée auparavant dans un `DATA`.
+Données stockées dans une [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) déclarée auparavant dans un `DATA`.
 
-```JS
+```abap
 INTO TABLE table
 ```
 
 ## Into (Variables...)
 
-Donnée stockées dans les [VARIABLES](../../04_Variables/01_Variables.md) `obj1`, `obj2`, `obj3`... déclarés auparavant dans un `DATA`.
+Donnée stockées dans les [VARIABLES](../../03_VARIABLES_&_CONSTANTES/02_VARIABLES_&_CONSTANTES/01_VARIABLES.md) `obj1`, `obj2`, `obj3`... déclarés auparavant dans un `DATA`.
 
-```JS
+```abap
 INTO (obj1, obj2, obj3, ...)
 ```
 
-## Into @DATA(Variable)
+## Into @DATA(structure)
 
-Données stockées dans une [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) déclarée directement dans la requête.
+Données stockées dans une structure déclarée directement dans la requête.
 
-```JS
-INTO @DATA(wa)
+```abap
+INTO @DATA(ls)
 ```
 
 ## Into @DATA(Table)
 
-Données stockées dans une [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) déclarée directement dans la requête.
+Données stockées dans une [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) déclarée directement dans la requête.
 
-```JS
+```abap
 INTO @DATA(table)
 ```
 
 ## Into (@DATA(Variables)...)
 
-```JS
+```abap
 INTO (@DATA(obj1), @DATA(obj2), @DATA(obj3), ...)
 ```
 
@@ -52,30 +52,30 @@ INTO (@DATA(obj1), @DATA(obj2), @DATA(obj3), ...)
 
 Lorsque les champs du [SELECT](./02_Select.md) ne respectent pas forcément l'ordre des colonnes de la table, le `INTO CORRESPONDING FIELDS OF` va chercher et associer les bonnes valeurs avec les bons champs.
 
-```JS
-INTO CORRESPONDING FIELDS OF wa
+```abap
+INTO CORRESPONDING FIELDS OF ls
 INTO CORRESPONDING FIELDS OF TABLE table
 ```
 
 _Exemple_
 
-```JS
-DATA: t_brand_mod TYPE TABLE OF zcar_brand_mod.
-FIELD-SYMBOLS: <fs_brand_mod> TYPE zcar_brand_mod.
+```abap
+DATA: lt_brand_mod TYPE TABLE OF zcar_brand_mod.
+FIELD-SYMBOLS: <lfls_brand_mod> TYPE zcar_brand_mod.
 
 SELECT model_year,
        brand,
        model
   FROM zcar_brand_mod
-  INTO TABLE @t_brand_mod.
+  INTO TABLE @lt_brand_mod.
 
-LOOP AT t_brand_mod ASSIGNING <fs_brand_mod>.
-  WRITE:/ <fs_brand_mod>-model_year, <fs_brand_mod>-brand,
-          <fs_brand_mod>-model.
+LOOP AT lt_brand_mod ASSIGNING <lfls_brand_mod>.
+  WRITE:/ <lfls_brand_mod>-model_year, <lfls_brand_mod>-brand,
+          <lfls_brand_mod>-model.
 ENDLOOP.
 ```
 
-La [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_BRAND_MOD` est une table ayant pour référence la [TABLE](../../09_Tables_DB/01_Tables.md) `ZCAR_BRAND_MOD`. La requête va ensuite sélectionner les champs `MODEL_YEAR`, `BRAND`, et `MODEL` et les stocker dans celle-ci.
+La [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `lT_BRAND_MOD` est une table ayant pour référence la [TABLE](../../10_DB_TABLES/02_TABLES.md) `ZCAR_BRAND_MOD`. La requête va ensuite sélectionner les champs `MODEL_YEAR`, `BRAND`, et `MODEL` et les stocker dans celle-ci.
 
 _Résultat de la requête_
 
@@ -87,27 +87,23 @@ _Résultat de la requête_
 | 201       | PEUGEOT    | 208       | 0000           |
 | 201       | PEUGEOT    | 307       | 0000           |
 | 201       | RENAULT    | MEGANE    | 0000           |
-| 201       | VOLKSWAGEN | GOLD      | 0000           |
+| 201       | VOLKSlsGEN | GOLD      | 0000           |
 
-_Résultat à l'écran_
+La requête va donc remplir la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) des colonnes de la gauche vers la droite alors qu'avec l'option `INTO CORRESPONDING FIELDS OF`, il va la remplir correctement.
 
-![](../../ressources/12_01_20_01.png)
-
-La requête va donc remplir la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) des colonnes de la gauche vers la droite alors qu'avec l'option `INTO CORRESPONDING FIELDS OF`, il va la remplir correctement.
-
-```JS
-DATA: t_brand_mod TYPE TABLE OF zcar_brand_mod.
-FIELD-SYMBOLS: <fs_brand_mod> TYPE zcar_brand_mod.
+```abap
+DATA: lt_brand_mod TYPE TABLE OF zcar_brand_mod.
+FIELD-SYMBOLS: <lfls_brand_mod> TYPE zcar_brand_mod.
 
 SELECT model_year,
        brand,
        model
   FROM zcar_brand_mod
-  INTO CORRESPONDING FIELDS OF TABLE @t_brand_mod.
+  INTO CORRESPONDING FIELDS OF TABLE @lt_brand_mod.
 
-LOOP AT t_brand_mod ASSIGNING <fs_brand_mod>.
-  WRITE:/ <fs_brand_mod>-model_year, <fs_brand_mod>-brand,
-          <fs_brand_mod>-model.
+LOOP AT lt_brand_mod ASSIGNING <lfls_brand_mod>.
+  WRITE:/ <lfls_brand_mod>-model_year, <lfls_brand_mod>-brand,
+          <lfls_brand_mod>-model.
 ENDLOOP.
 ```
 
@@ -121,53 +117,48 @@ _Résultat de la requête_
 |           | PEUGEOT    | 208       | 2012           |
 |           | PEUGEOT    | 307       | 2011           |
 |           | RENAULT    | MEGANE    | 2013           |
-|           | VOLKSWAGEN | GOLD      | 2015           |
+|           | VOLKSlsGEN | GOLD      | 2015           |
 
-_Résultat à l'écran_
+Il en est de même lorsqu'il s'agir d'une structure de destination.
 
-![](../../ressources/12_01_20_02.png)
-
-Il en est de même lorsqu'il s'agir d'une [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) de destination.
-
-```JS
-DATA: s_brand_mod TYPE zcar_brand_mod.
+```abap
+DATA: ls_brand_mod TYPE zcar_brand_mod.
 
 SELECT SINGLE model_year,
        brand,
        model
   FROM zcar_brand_mod
-  INTO CORRESPONDING FIELDS OF @s_brand_mod.
+  INTO CORRESPONDING FIELDS OF @ls_brand_mod.
 ```
 
-## Appending
+## APPENDING
 
-```JS
+```abap
 APPENDING [CORRESPONDING FIELDS OF] TABLE table
 ```
 
-Cette instruction fonctionne uniquement avec une [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) et donne la possibilité d'ajouter de nouveaux résultats sans supprimer les anciens.
+Cette instruction fonctionne uniquement avec une [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) et donne la possibilité d'ajouter de nouveaux résultats sans supprimer les anciens.
 
-Par exemple, avec la requête suivante, la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_PASSENGER`, n'aura qu'une fois les enregistrement de la [TABLE](../../09_Tables_DB/01_Tables.md) `ZPASSENGER`.
+Par exemple, avec la requête suivante, la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `lt_passenger`, n'aura qu'une fois les enregistrement de la [TABLE](../../09_Tables_DB/01_Tables.md) `ZPASSENGER`.
 
-```JS
+```abap
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  INTO TABLE @DATA(t_passenger).
+  INTO TABLE @DATA(lt_passenger).
 
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  INTO TABLE @t_passenger.
+  INTO TABLE @lt_passenger.
 
+DATA ls_passenger LIKE LINE OF lt_passenger.
 
-DATA s_passenger LIKE LINE OF t_passenger.
-
-LOOP AT t_passenger INTO s_passenger.
-  WRITE:/ s_passenger-surname, s_passenger-name,
-          s_passenger-date_birth.
+LOOP AT lt_passenger INTO ls_passenger.
+  WRITE:/ ls_passenger-surname, ls_passenger-name,
+          ls_passenger-date_birth.
 ENDLOOP.
 ```
 
@@ -180,40 +171,32 @@ _Résultat de la requête_
 | OLIVIERA    | JOSE     | 19781106       |
 | HERNANDEZ   | PATRICIA | 19841002       |
 
-_Résultat à l'écran_
-
-![](../../ressources/12_01_20_03.png)
-
-    A noter que la table interne T_PASSENGER ayant déjà été déclarée avec le DATA dans la première requête, il n'est pas nécessaire de la délcarer de nouveau dans la deuxième.
+    A noter que la table interne lt_passenger ayant déjà été déclarée avec le DATA dans la première requête, il n'est pas nécessaire de la délcarer de nouveau dans la deuxième.
 
     Il est possible de voir que le WRITE va automatiquement convertir la date en format visible, défini dans les paramètre de l'utilisateur. Pour y accéder, de n'importe quelle transaction, il suffit d'aller dans le menu Système - Valeurs utilisateur - Données utilisateur.
 
-![](../../ressources/12_01_20_04.png)
-
 Et de renseigner le format de la date désiré dans l'onglet `Constantes`, champ `Représ. de date`. Il est possible de paramétrer d'autres options comme les décimales, le format de l'heure...
 
-![](../../ressources/12_01_20_05.png)
+Cependant, si l'option `APPENDING TABLE` est utilisée dans la deuxième requête, les enregistrements de la [TABLE](../../10_DB_TABLES/02_TABLES.md) `ZPASSENGER` apparaîtront deux fois dans la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `lt_passenger`.
 
-Cependant, si l'option `APPENDING TABLE` est utilisée dans la deuxième requête, les enregistrements de la [TABLE](../../09_Tables_DB/01_Tables.md) `ZPASSENGER` apparaîtront deux fois dans la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_PASSENGER`.
-
-```JS
+```abap
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  INTO TABLE @DATA(t_passenger).
+  INTO TABLE @DATA(lt_passenger).
 
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  APPENDING TABLE @t_passenger.
+  APPENDING TABLE @lt_passenger.
 
-DATA s_passenger LIKE LINE OF t_passenger.
+DATA ls_passenger LIKE LINE OF lt_passenger.
 
-LOOP AT t_passenger INTO s_passenger.
-  WRITE:/ s_passenger-surname, s_passenger-name,
-          s_passenger-date_birth.
+LOOP AT lt_passenger INTO ls_passenger.
+  WRITE:/ ls_passenger-surname, ls_passenger-name,
+          ls_passenger-date_birth.
 ENDLOOP.
 ```
 
@@ -230,27 +213,23 @@ _Résultat de la requête_
 | OLIVIERA    | JOSE     | 19781106       |
 | HERNANDEZ   | PATRICIA | 19841002       |
 
-_Résultat à l'écran_
-
-![](../../ressources/12_01_20_06.png)
-
 De plus, l'option facultative `CORRESPONDING FIELDS OF` est utiliser de la même manière que dans la section précédente.
 
-```JS
-DATA: t_passenger TYPE TABLE OF zpassenger,
-      s_passenger TYPE zpassenger.
+```abap
+DATA: lt_passenger TYPE TABLE OF zpassenger,
+      ls_passenger TYPE zpassenger.
 
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  INTO CORRESPONDING FIELDS OF TABLE @t_passenger.
+  INTO CORRESPONDING FIELDS OF TABLE @lt_passenger.
 
 SELECT surname,
        name,
        date_birth
   FROM zpassenger
-  APPENDING CORRESPONDING FIELDS OF TABLE @t_passenger.
+  APPENDING CORRESPONDING FIELDS OF TABLE @lt_passenger.
 ```
 
 _Résultat de la requête_

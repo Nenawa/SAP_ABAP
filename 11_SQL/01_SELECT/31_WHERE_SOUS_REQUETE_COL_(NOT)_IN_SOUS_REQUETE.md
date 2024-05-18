@@ -1,10 +1,10 @@
-# **WHERE SOUS-REQUETE (NOT) IN SOUS-REQUETE**
+# WHERE SOUS-REQUETE (NOT) IN SOUS-REQUETE
 
-```JS
+```abap
 col [NOT] IN ss_requête
 ```
 
-> A distinguer de [WHERE SOUS-REQUETE (NOT) IN](<./28_Where_Sous_Requete_col_(not)_in.md>)
+> A distinguer de [WHERE SOUS-REQUETE (NOT) IN](./28_WHERE_SOUS_REQUETE_COL_(NOT)_IN.md)
 
 Cette option permet de contrôler si la valeur d'une colonne fait partie ou non (`NOT`) d'une `sous-requête`.
 
@@ -12,10 +12,10 @@ _Exemple_
 
 _Afficher la ville et le pays de destination qui n'existent pas dans la table des conducteurs et des passagers._
 
-```JS
+```abap
 SELECT city_to && ', ' && country_to AS city_ctry
   FROM ztravel AS t
-  INTO TABLE @DATA(t_city)
+  INTO TABLE @DATA(lt_city)
   WHERE city_to NOT IN ( SELECT city
                            FROM zdriver_car
                            WHERE city = t~city_to )
@@ -23,10 +23,10 @@ SELECT city_to && ', ' && country_to AS city_ctry
                            FROM zpassenger
                            WHERE city = t~city_to ).
 
-DATA s_city LIKE LINE OF t_city.
+DATA ls_city LIKE LINE OF lt_city.
 
-LOOP AT t_city INTO s_city.
-  WRITE:/ s_city-city_ctry.
+LOOP AT lt_city INTO ls_city.
+  WRITE:/ ls_city-city_ctry.
 ENDLOOP.
 ```
 
@@ -35,7 +35,3 @@ _Résultat de la requête_
 | **CITY_CTRY** |
 | ------------- |
 | LERIDA,ES     |
-
-_Résultat à l'écran_
-
-![](../../ressources/12_01_31_01.png)

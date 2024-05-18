@@ -1,6 +1,6 @@
-# **WHERE COL (NOT) LIKE**
+# WHERE COL (NOT) LIKE
 
-```JS
+```abap
 col [NOT] LIKE obj
 ```
 
@@ -10,18 +10,17 @@ _Exemple_
 
 _Recherche du nom et prénom de tous les passagers dont le nom se termine par "ez"._
 
-```JS
+```abap
 SELECT surname,
        name
   FROM zpassenger
-  INTO TABLE @DATA(t_passenger)
+  INTO TABLE @DATA(lt_passenger)
   WHERE ( surname LIKE '%EZ' OR surname LIKE '%ez' ).
 
+DATA ls_passenger LIKE LINE OF lt_passenger.
 
-DATA s_passenger LIKE LINE OF t_passenger.
-
-LOOP AT t_passenger INTO s_passenger.
-  WRITE:/ s_passenger-surname, s_passenger-name.
+LOOP AT lt_passenger INTO ls_passenger.
+  WRITE:/ ls_passenger-surname, ls_passenger-name.
 ENDLOOP.
 ```
 
@@ -31,9 +30,5 @@ _Résultat de la requête_
 | ----------- | -------- |
 | PEREZ       | MICHEL   |
 | HERNANDEZ   | PATRICIA |
-
-_Résultat à l'écran_
-
-![](../../ressources/12_01_27_01.png)
 
     Attention à la casse du texte recherché ! Dans l'exemple, pour être bien sûr du résultat, la recherche s'est effectuée sur les caractères en minuscule et majuscules.

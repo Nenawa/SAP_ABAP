@@ -16,9 +16,9 @@ SELECT COUNT( DISTINCT city_to )
   INTO @lv_count.
 ```
 
-Selon les valeurs enregistrées dans le chapitre [DDIC - SE11](../../08_SE11/01_SE11.md), `lv_count` aura la valeur de 3.
+Selon les valeurs enregistrées dans le chapitre [DDIC - SE11](../../09_DDIC/01_DICTIONNAIRE_DE_DONNEES.md), `lv_count` aura la valeur de 3.
 
-`COUNT(*)` ou `COUNT( * )` permet de compter tout simplement les lignes d'une [TABLE](../../09_Tables_DB/01_Tables.md).
+`COUNT(*)` ou `COUNT( * )` permet de compter tout simplement les lignes d'une [TABLE](../../10_DB_TABLES/02_TABLES.md).
 
 Exemple
 
@@ -32,7 +32,7 @@ SELECT COUNT( * )
   INTO @lv_count.
 ```
 
-Le résultat obtenu sera de sept occurrences dans la [TABLE](../../09_Tables_DB/01_Tables.md) `ZCAR_BRAND_MOD`.
+Le résultat obtenu sera de sept occurrences dans la [TABLE](../../10_DB_TABLES/02_TABLES.md) `ZCAR_BRAND_MOD`.
 
 Il est possible aussi d'utiliser plusieurs de ces fonctions d'agrégats dans une requête unique.
 
@@ -69,7 +69,7 @@ LOOP AT lt_driver_infos INTO ls_driver_infos.
 ENDLOOP.
 ```
 
-La [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `lt_driver_infos` aura les informations suivantes :
+La [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `lt_driver_infos` aura les informations suivantes :
 
 | **ID** | **TOTAL** | **MOY** | **MAX** | **MIN** |
 | ------ | --------- | ------- | ------- | ------- |

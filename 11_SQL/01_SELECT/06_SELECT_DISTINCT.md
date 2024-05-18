@@ -24,4 +24,4 @@ LOOP AT lt_driver_car INTO ls_driver_car.
 ENDLOOP.
 ```
 
-Grâce au `DISTINICT`, la sélection va importer les champs `CAR_BRAND` et `CAR_MODEL` de la [TABLE](../../09_Tables_DB/01_Tables.md) `ZDRIVER_CAR` sans aucun doublon, obtenant ainsi une liste clare des véhicules disponibles pour le coivoiturage. Le résultat de cette requête sera stocké dans la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_DRIVER_CAR` définie par le type `TY_DRIVER_CAR`, contenant les deux champs de la sélection. Une boucle `LOOP` permettra d'afficher le résultat à l'écran.
+Grâce au `DISTINICT`, la sélection va importer les champs `CAR_BRAND` et `CAR_MODEL` de la [TABLE](../../10_DB_TABLES/02_TABLES.md) `ZDRIVER_CAR` sans aucun doublon, obtenant ainsi une liste clare des véhicules disponibles pour le coivoiturage. Le résultat de cette requête sera stocké dans la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `LT_DRIVER_CAR` définie par le type `TY_DRIVER_CAR`, contenant les deux champs de la sélection. Une boucle `LOOP` permettra d'afficher le résultat à l'écran.

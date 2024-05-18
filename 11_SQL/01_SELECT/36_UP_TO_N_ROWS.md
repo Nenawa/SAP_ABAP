@@ -1,6 +1,6 @@
-# **UP TO N ROWS**
+# UP TO N ROWS
 
-```JS
+```abap
 . . .UP TO n ROWS. . .
 ```
 
@@ -10,18 +10,18 @@ _Exemple_
 
 _Sélectionner les trois dernières lignes de la table `ZCAR_BRAND_MOD`._
 
-```JS
+```abap
 SELECT brand,
        model
   FROM zcar_brand_mod
   UP TO 3 ROWS
-  INTO TABLE @DATA(t_car)
+  INTO TABLE @DATA(lt_car)
   ORDER BY brand DESCENDING.
 
-DATA s_car LIKE LINE OF t_car.
+DATA ls_car LIKE LINE OF lt_car.
 
-LOOP AT t_car INTO s_car.
-  WRITE:/ s_car-brand, s_car-model.
+LOOP AT lt_car INTO ls_car.
+  WRITE:/ ls_car-brand, ls_car-model.
 ENDLOOP.
 ```
 
@@ -32,10 +32,6 @@ _Résultat de la requête_
 | VOLKSWAGEN | GOLF      |
 | RENAULT    | MEGANE    |
 | PEUGEOT    | 307       |
-
-_Résultat à l'écran_
-
-![](../../ressources/12_01_36_01.png)
 
     Il est important de respecter la séquence de saisie des différentes clauses et fonctions de la requête, au risque d'avoir une erreur de syntaxe lors du contrôle de cette dernière, et peut-être de perdre du temps à se demander pourquoi le programme ne peut pas s'activer :
 

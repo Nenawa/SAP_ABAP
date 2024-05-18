@@ -1,8 +1,8 @@
-# **WHERE COL (NOT) IN**
+# WHERE COL (NOT) IN
 
-> A distinguer de [WHERE SOUS-REQUETE (NOT) IN SOUS-REQUETE](<./31_Where_Sous_Requete_(not)_in_Sous_Requete.md>)
+> A distinguer de [WHERE SOUS-REQUETE (NOT) IN SOUS-REQUETE](./31_WHERE_SOUS_REQUETE_COL_(NOT)_IN_SOUS_REQUETE.md)
 
-```JS
+```abap
 col [NOT] IN (obj1, obj2,. . . )
 ```
 
@@ -12,17 +12,17 @@ _Exemple_
 
 _Recherche du nom et du prénom des passagers n'habitant pas les villes de "Toulouse" et "Barcelone"._
 
-```JS
+```abap
 SELECT surname,
        name
   FROM zpassenger
-  INTO TABLE @DATA(t_passenger)
+  INTO TABLE @DATA(lt_passenger)
   WHERE city NOT IN ('TOULOUSE', 'BARCELONE').
 
-DATA s_passenger LIKE LINE OF t_passenger.
+DATA ls_passenger LIKE LINE OF lt_passenger.
 
-LOOP AT t_passenger INTO s_passenger.
-  WRITE:/ s_passenger-surname, s_passenger-name.
+LOOP AT lt_passenger INTO ls_passenger.
+  WRITE:/ ls_passenger-surname, ls_passenger-name.
 ENDLOOP.
 ```
 
@@ -31,7 +31,3 @@ _Résultat de la requête_
 | **SURNAME** | **NAME** |
 | ----------- | -------- |
 | PEREZ       | MICHEL   |
-
-_Résultat à l'écran_
-
-![](../../ressources/12_01_28_01.png)

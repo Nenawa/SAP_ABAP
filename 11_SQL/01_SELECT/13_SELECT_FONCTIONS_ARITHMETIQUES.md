@@ -44,11 +44,11 @@ SELECT toll,
        DIV( duration,60 )  AS div,    "Division
        MOD( duration,60 )  AS mod     "Reste division
   FROM ztravel
-  INTO TABLE @DATA(lt_arith).
+  INTO TABLE @DATA(lLt_arith).
 
-DATA: ls_arith LIKE LINE OF lt_arith.
+DATA: ls_arith LIKE LINE OF lLt_arith.
 
-LOOP AT lt_arith INTO ls_arith.
+LOOP AT lLt_arith INTO ls_arith.
   WRITE:/ ls_arith-toll, ls_arith-duration, ls_arith-gasol,
           ls_arith-abs,  ls_arith-ceil,     ls_arith-floor,
           ls_arith-div,  ls_arith-mod.
@@ -67,13 +67,13 @@ Cette requête va d’abord
 
 - et enfin `compter` le `nombre de minutes` du champ `DURATION (DIV)` et le `reste` de cette `division (MOD)`.
 
-Il est possible de déclarer une [VARIABLE](../../04_Variables/01_Variables.md), [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) ou [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) directement avec l’instruction `DATA`. Ainsi avec cette fonction unique, la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_ARITH` sera créée automatiquement avec les types et longueurs de champs nécessaires.
+Il est possible de déclarer une [VARIABLE](../../03_VARIABLES_&_CONSTANTES/02_VARIABLES_&_CONSTANTES/01_VARIABLES.md), une structure ou [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) directement avec l’instruction `DATA`. Ainsi avec cette fonction unique, la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `LT_ARITH` sera créée automatiquement avec les types et longueurs de champs nécessaires.
 
-De plus, afin que le résultat soit affiché à l’écran avec un [LOOP](../../11_Instructions_itab/09_Loop/README.md), la [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) `S_ARITH` va être déclarée comme la ligne de la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_ARITH` (`LIKE LINE OF`).
+De plus, afin que le résultat soit affiché à l’écran avec un [LOOP](../../08_INSTRUCTIONS_ITAB/09_LOOP/01_LOOP_AT_ITAB.md), la structure `LS_ARITH` va être déclarée comme la ligne de la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `LT_ARITH` (`LIKE LINE OF`).
 
-La [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_ARITH` étant déclarée dans la requête [SQL](./01_SQL.md), la déclaration de la [STRUCTURE](../../10_Tables_Internes/01_Tables_Internes.md) `S_ARITH` ne pourrait se faire qu’après la requête, car la référence utilisée (`LIKE LINE OF T_ARITH`) est inexistante avant.
+La [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `LT_ARITH` étant déclarée dans la requête [SQL](./01_SQL.md), la déclaration de la structure `LS_ARITH` ne pourrait se faire qu’après la requête, car la référence utilisée (`LIKE LINE OF LT_ARITH`) est inexistante avant.
 
-Au final, la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_ARITH` contiendra les valeurs suivantes :
+Au final, la [TABLE INTERNE](../../07_TABLE_INTERNE/01_TABLES_INTERNES.md) `LT_ARITH` contiendra les valeurs suivantes :
 
 | **TOLL** | **DURATION** | **GASOL** | **ABS** | **CEIL** | **FLOOR** | **DIV** | **MOD** |
 | -------- | ------------ | --------- | ------- | -------- | --------- | ------- | ------- |
@@ -82,6 +82,3 @@ Au final, la [TABLE INTERNE](../../10_Tables_Internes/01_Tables_Internes.md) `T_
 | 16.00    | 140          | 30.21     | 24.21   | 41       | 40        | 2       | 20      |
 | 6.00     | 100          | 50.50     | 44.50   | 51       | 50        | 1       | 40      |
 
-_Résultat à l'écran_
-
-![](../../ressources/12_01_13_01.png)
