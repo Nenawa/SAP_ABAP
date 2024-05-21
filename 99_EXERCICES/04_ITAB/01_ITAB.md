@@ -126,7 +126,7 @@ A. Pour le numéro du Document de vente 1000000003, afficher toutes ses données
 
 B. Pour chaque en-tête, modifier la valeur du champ "ernam" en ajoutant "AIR-" devant le nom.
 
-REGLE GENERALE 3 : TRAITEMENT DES DONNEES DES POSTES
+REGLE GENERALE 4 : TRAITEMENT DES DONNEES DES POSTES
 
 A. Créer une nouvelle table interne nommé vbap_split. Cette table devra ressembler à la table locale vbap (sans le champ matnr) 
    mais devra stocker en plus (dans autant de colonnes que nécessaire) les valeurs "matnr" séparé au niveau du "-".
