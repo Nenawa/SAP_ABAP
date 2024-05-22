@@ -148,6 +148,8 @@
 "'BEGIN OF' est suivie du nom de la STRUCTURE DE TABLE.
 "
 "Il faudra ensuite déclarer les champs et de les typer (comme pour les variables) en suivant les indication de la consigne
+"
+"Enfin, il faudra indiquer à SAP que nous avons fini la STRUCTURE DE TABLE avec l'instruction 'END OF' suivi du nom de la STRUCTURE DE LA TABLE.
 
 "1e version : avec la table-zone en tant que type
 *TYPES: BEGIN OF ty_vbak,
