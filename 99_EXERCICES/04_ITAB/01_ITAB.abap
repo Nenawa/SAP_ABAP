@@ -553,6 +553,78 @@ START-OF-SELECTION.
 
     ENDIF.
 
+*REGLE GENERALE 4 : TRAITEMENT DES DONNEES DE POSTE (AVEC RUPTURE)
+
+"Une 'RUPTURE' intervient uniquement que dans les boucle 'LOOP'.
+"La 'RUPTURE' commence toujours avec l'instruction 'AT ...' qui est obligatoire et finie toujours par 'ENDAT'.
+"Il existe plusieurs versions de la rupture qui sont les suivantes :
+
+" 'AT FIRST' ... 'ENDAT' (utilisation peu courante)
+
+LOOP AT lt_vbap ASSIGNING FIELD-SYMBOL(<lfs_vbap_at_first>).
+
+  AT FIRST. "Instruction 'AT FIRST' est fixe et ne nécessite pas de paramètre supplémentaire mais sera obligatoirement "fermé" par l'instruction 'ENDAT'.
+
+    "'AT FIRST' est une condition dans une 'LOOP' permettant d'implémenter un traitement à la 'PREMIERE LIGNE LUE' ('AT FIRST') uniquement.
+    "Tout traitement implémenté ici s'appliquera uniquement lors de la lecture de la premiere ligne.
+    "Il sera alors possible d'utiliser les valeurs de la ligne lue (la 1ère) pour le ou les traitements
+    "Par convention, le 'AT FIRST' ... 'ENDAT' sera a positionner en premier à l'intérieur de la LOOP.
+
+    WRITE:/ 'Exemple LOOP avec AT FIRST', <lfs_vbap_at_first>-vbeln.
+    "Grâce à l'instruction 'WRITE' ici, si le programme est exécuté, il n'affichera que la valeur du champ VBELN de la première ligne
+
+  ENDAT. "Instruction 'ENDAT' est obligatoire pour terminer l'instruction 'AT FIRST'.
+
+  "Le 'AT FIRST' ... 'ENDAT' n'empéchera pas d'éventuels autres traitements situés en dessous (c'est à dire ici)
+
+ENDLOOP.
+
+"'AT LAST' ... 'ENDAT' (utilisation très peu courante)
+
+LOOP AT lt_vbap ASSIGNING FIELD-SYMBOL(<lfs_vbap_at_end>).
+
+  "Tout comme le 'AT FIRST' ... 'ENDAT', le 'AT LAST' ... 'ENDAT' n'empéchera pas d'éventuels autres traitements situés au dessus (c'est à dire ici)
+
+  AT LAST. "Instruction 'AT END' est fixe et ne nécessite pas de paramètre supplémentaire mais sera obligatoirement "fermé" par l'instruction 'ENDAT'.
+
+    "'AT LAST' est une condition dans une 'LOOP' permettant d'implémenter un traitement à la 'DERNIERE LIGNE LUE' ('AT LAST') uniquement.
+    "Tout traitement implémenté ici s'appliquera uniquement lors de la lecture de la dernière ligne.
+    "Il sera alors possible d'utiliser les valeurs de la ligne lue (la dernière) pour le ou les traitements
+    "Par convention, le 'AT LAST' ... 'ENDAT' sera a positionner en dernier à l'intérieur de la LOOP.
+
+    WRITE:/ 'Exemple LOOP avec AT END', <lfs_vbap_at_end>-vbeln.
+    "Grâce à l'instruction 'WRITE' ici, si le programme est exécuté, il n'affichera que la valeur du champ VBELN de la dernière ligne
+
+  ENDAT. "Instruction 'ENDAT' est obligatoire pour terminer l'instruction 'AT FIRST'.
+
+ENDLOOP.
+
+"'AT NEW paramètre' ... 'ENDAT' (utilisation courante)
+
+LOOP AT lt_vbap ASSIGNING FIELD-SYMBOL(<lfs_vbap_at_new>).
+
+  "'AT NEW champ' ... 'ENDAT' n'empéchera pas d'éventuels autres traitements situés au dessus (c'est à dire ici)
+
+  AT NEW vbeln. "Instruction 'AT NEW' est fixe et nécessite un paramètre supplémentaire qui est un champ de la table sur laquelle on 'LOOP'.
+
+    "'AT NEW champ' est une condition dans une 'LOOP' permettant d'implémenter un traitement lorsque la valeur du 'champ' changera.
+    "Lors de la lecture de la première ligne, la valeur du 'champ' mis en tant que paramètre changera (la valeur passera de vide à rempli)
+    "Les éventuels traitements à l'intérieur de la rupture 'AT NEW champ' ... 'ENDAT' s'appliqueront
+
+    WRITE:/ 'Exemple LOOP avec AT NEW vbeln', <lfs_vbap_at_new>-vbeln,
+          / <lfs_vbap_at_new>-posnr.
+    "Grâce à l'instruction 'WRITE' ici, si le programme est exécuté, il affichera successivement :
+    " - la valeur du champ VBELN dès qu'il change
+    " - la valeur du champ POSNR de la ligne lue.
+    "En résumé, les instructions présentes dans 'AT NEW vbeln' s'appliqueront uniquement sur les lignes où la valeur de vbeln
+    "est différente de la ligne précédente
+
+  ENDAT. "Instruction 'ENDAT' est obligatoire pour terminer l'instruction 'AT NEW vbeln'.
+
+  "'AT NEW champ' ... 'ENDAT' n'empéchera pas d'éventuels autres traitements situés en dessous (c'est à dire ici)
+
+ENDLOOP.
+
   ENDLOOP.
 
   BREAK-POINT.
