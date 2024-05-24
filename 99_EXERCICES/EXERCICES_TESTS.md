@@ -218,4 +218,4 @@ Version un peu plus réaliste :
 > | ?        | ?    | SY-DATUM   | Date de création du document d'achat |
 > | ?        | ?    | 4          | Dernier numéro de poste              |
 >
-> B. A partir de la struture, essaye de déclarer une table de t[ype standard](../07_TABLE_INTERNE/02_TYPE_STANDARD.md), une table de [type sorted](../07_TABLE_INTERNE/03_TYPE_SORTED.md) et une table de [type hashed](../07_TABLE_INTERNE/04_TYPE_HASHED.md).
+> B. A partir de la struture, essaye de déclarer une table de [type standard](../07_TABLE_INTERNE/02_TYPE_STANDARD.md), une table de [type sorted](../07_TABLE_INTERNE/03_TYPE_SORTED.md) et une table de [type hashed](../07_TABLE_INTERNE/04_TYPE_HASHED.md).
