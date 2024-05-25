@@ -33,3 +33,4 @@ ENDTRY.
 r_salv_table->display( ).
 ```
 
+> Après avoir modifié `lt_xxxxx` par la table que vous voulez afficher, exécuter le programme.
